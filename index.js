@@ -1,9 +1,3 @@
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        window.location.href = "pages/home/home.html";
-    }
-})
-
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailErrors();
@@ -54,7 +48,6 @@ function togglePasswordErrors() {
 
 function toggleButtonsDisable() {
     const emailValid = isEmailValid();
-    form.recoverPasswordButton().disabled = !emailValid;
 
     const passwordValid = isPasswordValid();
     form.loginButton().disabled = !emailValid || !passwordValid;
@@ -81,3 +74,5 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
 } 
+
+

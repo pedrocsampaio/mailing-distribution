@@ -1,0 +1,37 @@
+const db = firebase.firestore();
+const contatosCollection = db.collection('contatos');
+
+// Função para adicionar vários contatos ao Firestore
+function adicionarContatos(contatos) {
+    contatos.forEach((contato) => {
+        contatosCollection.add(contato)
+            .then((docRef) => {
+                console.log("Contato adicionado com ID: ", docRef.id);
+            })
+            .catch((error) => {
+                console.error("Erro ao adicionar contato: ", error);
+            });
+    });
+}
+
+// Lista de contatos a serem adicionados
+const listaDeContatos = [
+    {
+        name: "teste2",
+        numero: 992460533,
+        profissao: "FISCAL DE TRIBUTOS ESTADUAL",
+        renda: "Mais de 9 mil",
+        uid: "agYHkA0Pv0fPPO9aTsanRvW6zCq1",
+    },
+    {
+        name: "teste1",
+        numero: 992460663,
+        profissao: "FISCAL",
+        renda: "Mais de 9 mil",
+        uid: "agYHkA0Pv0fPPO9aTsanRvW6zCq1",
+    },
+    // Adicione mais contatos aqui
+];
+
+// Chame a função para adicionar os contatos à coleção
+adicionarContatos(listaDeContatos);

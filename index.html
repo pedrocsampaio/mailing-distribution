@@ -1,33 +1,24 @@
 <!doctype html>
-
-<html>
-
+<html lang="pt-BR">
 <head>
-    <title>Controle de gastos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Group.ico" type="image/x-icon">
+    <title>Contatos</title>
 </head>
 
 <body class="centralize">
     <form>
-        <div class="form-field">
-            <div><label>Email</label></div>
-            <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
-            <div class="error" id="email-required-error">Email é obrigatório</div>
-            <div class="error" id="email-invalid-error">Email inválido</div>
-        </div>
-        <div class="form-field">
-            <div><label>Senha</label></div>
-            <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
-            <div class="error" id="password-required-error">Senha é obrigatória</div>
-        </div>
-        <div>
-            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
-        </div>
-        <div>
-            <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
-        </div>
-        <div>
-            <button type="button" class="outline" onclick="register()">Registrar</button>
-        </div>
+        <h1>Login</h1>
+        <p>Digite os seus dados de acesso no campo abaixo</p>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="" onchange="onChangeEmail()"/>
+        <div class="error" id="email-required-error">Email é obrigatório</div>
+        <div class="error" id="email-invalid-error">Email inválido</div>
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" placeholder="" onchange="onChangePassword()"/>
+        <div class="error" id="password-required-error">Senha é obrigatória</div>
+        <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Acessar</button>
     </form>
 </body>
 
@@ -43,3 +34,4 @@
 <script src="firebase-init.js"></script>
 
 </html>
+
